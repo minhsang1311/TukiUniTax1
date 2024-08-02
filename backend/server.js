@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./db'); // Import db connection
 const customer = require('./customer');
+require('dotenv').config();
 
 const app = express();
 const cors = require('cors');
@@ -35,6 +36,6 @@ app.post('/customer', async (req, res) => {
         }
     }
 });
-const port = process.env.PORT || 8080; // Use environment variable for port or default to 5000
+const port = process.env.PORT
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
